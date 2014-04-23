@@ -1,0 +1,61 @@
+.s2_stripe_form_container {
+	margin: 0 auto;
+}
+.s2_stripe_form .error-field {
+	background: #FFEDED;
+	border-color: #DD2727;
+}
+.s2_stripe_form > .row {
+	margin: 2px 0;
+}
+.s2_stripe_form label {
+	width: 195px;
+	display: inline-block;
+}
+.s2_stripe_messages p {
+	margin: 10px 0;
+	padding: 5px;
+	display: none;
+}
+.s2_stripe_messages p.error-field,
+.s2_stripe_messages p.error {
+	background: #F3CBCB;
+	border: 1px solid #DA1616;
+}
+.s2_stripe_messages p.error {
+	border-radius: 5px;
+}
+.s2_stripe_messages p.success {
+	background: #b6ddb6;
+	border: 1px solid #20b120;
+	border-radius: 5px;
+}
+.s2_stripe_form input,
+.s2_stripe_form select {
+	font-size: 14px;
+	height: 20px;
+	display: inline-block;
+}
+.s2_stripe_form .cols-2 input,
+.s2_stripe_form .cols-2 select {
+	width: 80px;
+}
+.s2_stripe_form select {
+	background-color: #FFF;
+	border: 1px solid #CCC;
+}
+a.s2_stripe_pay_button {
+	border: 1px solid #CCC;
+	display: block;
+	text-transform: uppercase;
+	margin: 10px 0;
+	border-radius: 10px;
+	text-align: center;
+	padding: 10px 0;
+}
+a.s2_stripe_pay_button:hover {
+	background: #D0E8EC;
+}
+a.s2_stripe_pay_button .s2_stripe_preloader {
+	visibility: hidden;
+}
