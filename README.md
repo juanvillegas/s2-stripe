@@ -25,7 +25,7 @@ Docs
 ### Detecting when a customer's subscription should end
 
 Stripe will handle charging your customers when the period (month, semester, year, whatever) ends. If Stripe fails to charge your customer, it will send a notification to an endpoint of your choice. So, what you have to do to receive these notifications in your S2 installation is configuring the endpoint to point to your site url. We are going to add a specific query string parameter so the plugin can distinguish these notifications from any other POST request..
-Configuring the endpoint is as simple as:
+Configuring the endpoint is as simple as:<br>
 1. Go to your Stripe dashboard
 2. Go to **account settings**
 3. Click the **webhooks** tab
