@@ -22,10 +22,11 @@ The plugin allows the site owner to:
 
 Roadmap
 ------
-[DONE] + Connect **unsubscribe** event, sent from Stripe, to the corresponding S2 unsusbcribe event
-[DELAYED TO V2] + Add switch in Settings > S2 Stripe to allow easily changing to test/production mode
-[DELAYED TO V2] + Add custom error messages
-[DELAYED TO V2] + Add localization
++ [DONE] Connect **unsubscribe** event, sent from Stripe, to the corresponding S2 unsusbcribe event
++ [DELAYED TO V2] Add switch in Settings > S2 Stripe to allow easily changing to test/production mode
++ [DELAYED TO V2] Add custom error messages
++ [DELAYED TO V2] Add localization
+
 
 Docs
 ------
