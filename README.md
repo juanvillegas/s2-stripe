@@ -22,10 +22,10 @@ The plugin allows the site owner to:
 
 Roadmap
 ------
-+ Connect **unsubscribe** event, sent from Stripe, to the corresponding S2 unsusbcribe event
-+ Add switch in Settings > S2 Stripe to allow easily changing to test/production mode
-+ Add custom error messages
-+ Add localization
+[DONE] + Connect **unsubscribe** event, sent from Stripe, to the corresponding S2 unsusbcribe event
+[DELAYED TO V2] + Add switch in Settings > S2 Stripe to allow easily changing to test/production mode
+[DELAYED TO V2] + Add custom error messages
+[DELAYED TO V2] + Add localization
 
 Docs
 ------
@@ -41,7 +41,7 @@ Docs
   1. Go to the Plans Map section
   2. Click *Map Another* link to enter a new mapping
   3. In the left combo, choose a *S2 Role/Membership*. In the right combo, pick a *Stripe Plan* to associate with your S2 Role/Membership previously chosen.
-  4. All add the mappings you need, and once finished click *Save*.
+  4. Repeat step 6.2 and 6.3 for all the mappings you need, and once finished click *Save*.
 7. (Optional) But important: this step allows you to configure your plugin to listen for subscription cancellations in Stripe to end the corresponding S2 Member User subscription. Refer to *Detecting when a customer's subscription should end* for the steps to follow.
 
 
@@ -55,9 +55,9 @@ The plugin will enable two shortcodes:
 
 Generates a pay form to be embedded in any page/post. The form has the required classes and ids to be properly styled and referenced with scripts. An example of the output can be seen here: <<needs screenshot>>
 There are a few parameters to be used with this shortcode:
-* *s2_level*: its the role the form is going to be created for. This parameter determines which role the new user is subscribing to, and thus how much he will be charged. (required)
-* *submit_label*: the label to be used in the submit button. (optional. defaults to "Submit")
-* *coupons_enabled*: wether or not the form should give the option to the user to enter coupons. (option. defaults to "false")
+* *s2_level*: it's the role the form is going to be created for. This parameter determines which role the new user is subscribing to, and thus how much he will be charged. (required)
+* *submit_label*: it's the label to be used in the submit button. (optional. defaults to "Submit")
+* *coupons_enabled*: indicates wether or not the form should give the option to the user to enter coupons. (option. defaults to "false")
 
 #### s2_stripe_upgrade
 
@@ -88,7 +88,7 @@ TODO: finish docs
 
 Need more help?
 ======
-Im going to do my best to maintain and attend all issues anyone may have.. however, im working full time for a company, which usually turns into 9-10 a day, so i cannot compromise to help everyone/answer every doubt/keep the docs tidy..
+Im going to do my best to maintain and attend all issues anyone may have.. however, im working full time for a company, which usually turns into 9-10 hours a day, so i cannot compromise to help everyone/answer every doubt/keep the docs tidy..
 
-*If you feel you need quick, additional, personalized support, feel free to contact me at my mail juan.villgs@gmail.com or check https://www.odesk.com/users/~~3df1e9f3d65951f7 for an hourly fee.*
+*If you feel you need quick, additional, personalized support, feel free to contact me at my email juan.villgs[at]gmail[dot]com or check https://www.odesk.com/users/~~3df1e9f3d65951f7 for an hourly fee.*
 
