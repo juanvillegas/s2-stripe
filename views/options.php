@@ -99,7 +99,7 @@
 	<table class="form-table" id="plans_map">
 		<tbody>
 			<?php
-				if( count( $config['map'] ) == 0 ){
+				if( ! isset( $config['map'] ) || ( count( $config['map'] ) == 0 ) ){
 					generate_map_row( $roles, $plans );
 				}else{
 					for( $i = 0; $i < count($config['map'] ); $i = $i + 2 ){

@@ -3,7 +3,7 @@
  * Plugin Name: S2 Member - Stripe Gateway
  * Plugin URI: http://juanvillegas.ws
  * Description: Integrates Stripe into your S2 Member installation
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: Juan Villegas
  * Author URI: http://juanvillegas.ws
  * License: MIT
@@ -668,8 +668,10 @@ class S2_Stripe {
 				$response = Stripe_Plan::all(array( 'limit' => 100 ));
 			}
 			$plans = $response['data'];
-			$allPlans = array_merge( $allPlans, $plans );
-			$startingAfter = $plans[count($plans) - 1]->id;
+			if( count( $plans ) > 0 ){
+				$allPlans = array_merge( $allPlans, $plans );
+				$startingAfter = $plans[count($plans) - 1]->id;
+			}
 		} while( $response['has_more'] == true );
 		return $allPlans;
 	}
