@@ -26,17 +26,24 @@
 */
 
 define('STRIPE_PHP_FOLDER_NAME', 'stripe-php-1.11.0');
+DEFINE('S2_STRIPE_REPO_USERNAME', 'juanvillegas');
+DEFINE('S2_STRIPE_REPO_NAME', 's2-stripe');
+
+// Logic for the uploader
+include('logic/updater.php');
+if ( is_admin() ) {
+    new CoolPluginUpdater( __FILE__, S2_STRIPE_REPO_USERNAME, S2_STRIPE_REPO_NAME );
+}
+
 
 
 /* ====================================
-
 s2_stripe_serial => array(
 	'stripe_pub_key' => 123,
 	'stripe_secret_key' => 123,
 	's2_proxy' => 123456,
 	's2_admin_email' => 123@123.com
 )
-
 ===================================== */
 class S2_Stripe_Messages {
 
@@ -60,7 +67,6 @@ class S2_Stripe_Messages {
 			return false;
 		}
 	}
-
 
 }
 
@@ -235,40 +241,6 @@ class S2_Stripe {
 		//add_shortcode( 's2_stripe_generate_upgrade_url', 'do_s2_stripe_generate_upgrade_url' );
 	}
 
-	// generates an upgrade url for the current logged in user.
-	// page_id => page id of the page where the s2 stripe shortcode was placed TODO: retrieve this from options
-	// target_plan => the plan we want to upgrade/downagrade to
-	// requires a logged in user..
-	/*function do_s2_stripe_generate_upgrade_url( $atts ){
-	    extract( shortcode_atts( array(
-	        'page_id' => false,
-	        'stripe_target_plan' => false,
-	        's2_target_plan' => false
-	    ), $atts ) );
-
-	    if( ! $stripe_target_plan || ! $s2_target_plan || ! $page_id ){
-	    	return 'ERROR: page_id and target_plan are required attributes!';
-	    }
-
-	    $base_url = get_permalink( $page_id );
-
-	    // get current logged in user
-	    $fields = json_decode(S2MEMBER_CURRENT_USER_FIELDS, true);
-	    
-		// is user logged in?
-	    if( S2MEMBER_CURRENT_USER_IS_LOGGED_IN ){
-	    	return 'ERROR: this shortcode should be used for logged in users only';
-	    }
-
-	    $stripe_customer_id = $fields['subscr_id'];
-
-	    $upgrade_url = add_query_arg( array(
-	    	'tp' => base64_encode( $target_plan ), // tp is target_plan
-	    	'cus' => base64_encode( $stripe_customer_id ) // stripe's customer id -> not sure if i need this
-	    ), $base_url );
-
-	    return $upgrade_url;
-	}*/
 
 	function build_s2_stripe_pay( $atts, $content ){
 		extract( shortcode_atts( array(
@@ -297,7 +269,7 @@ class S2_Stripe {
 
 	function build_s2_stripe_upgrade( $atts, $content ){
 		extract( shortcode_atts( array(
-			'label' => 'Upgrade/Downgrade',
+			'label' => 'Upgrade/Downgrade', // label for the submit button in the form
 			'coupons_enabled' => false // false => no coupons, true => enable coupons
 		), $atts ) );
 
@@ -317,7 +289,6 @@ class S2_Stripe {
 			}
 		}
 
-		//$fields = json_decode(S2MEMBER_CURRENT_USER_FIELDS, true);
 		$user = new WP_User( S2MEMBER_CURRENT_USER_ID );
 		$current_role = $user->roles[0];
 		unset( $roles[$current_role] );
