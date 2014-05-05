@@ -3,27 +3,12 @@
  * Plugin Name: S2 Member - Stripe Gateway
  * Plugin URI: http://juanvillegas.ws
  * Description: Integrates Stripe into your S2 Member installation
- * Version: 1.0
+ * Version: 1.1
  * Author: Juan Villegas
  * Author URI: http://juanvillegas.ws
- * License: GPL2
+ * License: MIT
  */
 
-/*  Copyright YEAR  PLUGIN_AUTHOR_NAME  (email : PLUGIN AUTHOR EMAIL)
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as 
-    published by the Free Software Foundation.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
 
 define('STRIPE_PHP_FOLDER_NAME', 'stripe-php-1.11.0');
 DEFINE('S2_STRIPE_REPO_USERNAME', 'juanvillegas');
