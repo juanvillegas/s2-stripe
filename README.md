@@ -26,6 +26,7 @@ Roadmap
 + [DELAYED TO V2] Add switch in Settings > S2 Stripe to allow easily changing to test/production mode
 + [DELAYED TO V2] Add custom error messages
 + [DELAYED TO V2] Add localization
++ [DONE] Add self-updater
 
 
 Docs
@@ -84,8 +85,6 @@ Configuring the endpoint is as simple as:
 Screenshot: http://prntscr.com/3cjigx
 
 From now on, all events happening in Stripe will be sent to your site, and the plugin will catch these requests and act accordingly. For the moment, the only event we are interested in is the *Subscription Cancellation* event.
-
-TODO: finish docs
 
 Need more help?
 ======
