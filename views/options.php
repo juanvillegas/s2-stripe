@@ -88,34 +88,38 @@
 
 
 <?php
-	$roles = S2_Stripe::getRoles();
+	try {
+		$roles = S2_Stripe::getRoles();
 
-	$plans = S2_Stripe::getStripePlans();
+		$plans = S2_Stripe::getStripePlans();
 ?>
-<h2>Plans Map</h2>
-<p>Configure your plans. For extended information, consult the documentation.</p>
-<form method="post">
-	<input type="hidden" name="s2_stripe_map_trigger" value="1">
-	<table class="form-table" id="plans_map">
-		<tbody>
-			<?php
-				if( ! isset( $config['map'] ) || ( count( $config['map'] ) == 0 ) ){
-					generate_map_row( $roles, $plans );
-				}else{
-					for( $i = 0; $i < count($config['map'] ); $i = $i + 2 ){
-						generate_map_row( $roles, $plans, array( $config['map'][$i], $config['map'][$i+1] ) );
-					}
-				}
-			?>
-			<tr valign="top">
-				<td><a href="" id="s2_stripe_add_map">Map another</a></td>
-			</tr>
-		</tbody>
-	</table>
-	<p class="submit">
-		<input type="submit" name="submit" class="button button-primary" value="S2 Save!">
-	</p>
-</form>
+		<h2>Plans Map</h2>
+		<p>Configure your plans. For extended information, consult the documentation.</p>
+		<form method="post">
+			<input type="hidden" name="s2_stripe_map_trigger" value="1">
+			<table class="form-table" id="plans_map">
+				<tbody>
+					<?php
+						if( ! isset( $config['map'] ) || ( count( $config['map'] ) == 0 ) ){
+							generate_map_row( $roles, $plans );
+						}else{
+							for( $i = 0; $i < count($config['map'] ); $i = $i + 2 ){
+								generate_map_row( $roles, $plans, array( $config['map'][$i], $config['map'][$i+1] ) );
+							}
+						}
+					?>
+					<tr valign="top">
+						<td><a href="" id="s2_stripe_add_map">Map another</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="submit">
+				<input type="submit" name="submit" class="button button-primary" value="S2 Save!">
+			</p>
+		</form>
+<?php }catch(Exception $e){
+	echo '<p>There was a problem connecting to Stripe. Have you entered your Stripe api keys already?</p>';
+} ?>
 
 <div id="s2_stripe_test">
 	<h2>Test your settings</h2>
