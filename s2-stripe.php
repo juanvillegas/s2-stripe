@@ -630,8 +630,8 @@ class S2_Stripe {
 							'subscr_id' => $customer_id,
 							'txn_type' => 'subscr_cancel',
 							'txn_id' => 'stripe-cancel-'. time(),
-							'item_number' => $plan_object->id, // TODO: i think we have to use the local s2 membership level here
-							'item_name' => $plan_object->name // TODO: we have to test it without this parameter
+							'item_number' => S2_Stripe::getRoleLevel(S2_Stripe::getRoleForStripePlan($plan_object->id)), // TODO: i think we have to use the local s2 membership level here
+							'item_name' => S2_Stripe::getRoleForStripePlan($plan_object->id) // TODO: we have to test it without this parameter
 						);
 
 						$fields_string = http_build_query($fields);
@@ -688,7 +688,18 @@ class S2_Stripe {
 		$map = S2_Stripe_DataManager::getPlansMap();
 		for( $i = 0; $i < count( $map ); $i = $i + 2 ){
 			if( $map[$i] == $role ){
-				return $map[$i+1];
+				return $map[$i + 1];
+			}
+		}
+		return false;
+	}
+
+	// inverse of getStripePlanForRole
+	static function getRoleForStripePlan( $stripePlan ){
+		$map = S2_Stripe_DataManager::getPlansMap();
+		for( $i = 0; $i < count( $map ); $i = $i + 2 ){
+			if( $map[$i + 1] == $stripePlan ){
+				return $map[$i];
 			}
 		}
 		return false;
