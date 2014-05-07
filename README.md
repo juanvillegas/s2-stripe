@@ -28,6 +28,9 @@ Roadmap
 + [DELAYED TO V2] Add localization
 + [DONE] Add self-updater
 
+FAQ
+------
++ Check ISSUES section for topics tagged "question"
 
 Docs
 ------
