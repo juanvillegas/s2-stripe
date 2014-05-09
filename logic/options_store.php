@@ -20,7 +20,7 @@
 	if( isset( $_POST['s2_stripe_map_trigger'] ) ){
 		$updated = $_POST['s2_stripe'];
 		
-		if( ! empty( $current ) ){
+		if( ! empty( $current ) && is_array( $updated ) ){
 			$updated = array_merge( $current, $updated );
 		}
 
