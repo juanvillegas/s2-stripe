@@ -49,6 +49,14 @@ Docs
   4. Repeat step 6.2 and 6.3 for all the mappings you need, and once finished click *Save*.
 7. (Optional) But important: this step allows you to configure your plugin to listen for subscription cancellations in Stripe to end the corresponding S2 Member User subscription. Refer to *Detecting when a customer's subscription should end* for the steps to follow.
 
+### Videos
+
+
+[![ScreenShot](http://img.youtube.com/vi/087KKv8evUk/0.jpg)](http://youtu.be/087KKv8evUk)
+[![ScreenShot](http://img.youtube.com/vi/v4QGZvtwGQQ/0.jpg)](http://youtu.be/v4QGZvtwGQQ)
+[![ScreenShot](http://img.youtube.com/vi/zPuBDEcWe0I/0.jpg)](http://youtu.be/zPuBDEcWe0I)
+[![ScreenShot](http://img.youtube.com/vi/btoVqT-JvX4/0.jpg)](http://youtu.be/btoVqT-JvX4)
+[![ScreenShot](http://img.youtube.com/vi/84RnqVZOvNQ/0.jpg)](http://youtu.be/84RnqVZOvNQ)
 
 ### How to use it
 
