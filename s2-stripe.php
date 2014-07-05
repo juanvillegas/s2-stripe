@@ -8,7 +8,7 @@
  * Author URI: http://juanvillegas.ws
  * License: MIT
  */
-
+k
 
 define('STRIPE_PHP_FOLDER_NAME', 'stripe-php-1.11.0');
 DEFINE('S2_STRIPE_REPO_USERNAME', 'juanvillegas');
@@ -574,7 +574,7 @@ class S2_Stripe {
 		$parse = parse_url( site_url() );
 
 		// TODO: fix the 'custom' param in the line below..
-		$gateway = site_url() . '?s2member_paypal_notify=1&s2member_paypal_proxy=stripe&s2member_paypal_proxy_verification='. S2_Stripe_DataManager::get_ipn_proxy() .'&custom=kubicastudio.com&' . $query;
+		$gateway = site_url() . '?s2member_paypal_notify=1&s2member_paypal_proxy=stripe&s2member_paypal_proxy_verification='. S2_Stripe_DataManager::get_ipn_proxy() .'&custom='. preg_replace('/^www\./','',$_SERVER['SERVER_NAME']) .'&' . $query;
 	    $ch = curl_init();
 	    curl_setopt($ch, CURLOPT_URL, $gateway );
 	    curl_setopt($ch, CURLOPT_POST, true);
