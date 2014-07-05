@@ -8,7 +8,6 @@
  * Author URI: http://juanvillegas.ws
  * License: MIT
  */
-k
 
 define('STRIPE_PHP_FOLDER_NAME', 'stripe-php-1.11.0');
 DEFINE('S2_STRIPE_REPO_USERNAME', 'juanvillegas');
