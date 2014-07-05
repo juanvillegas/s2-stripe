@@ -27,6 +27,8 @@ Roadmap
 + [DELAYED TO V2] Add custom error messages
 + [DELAYED TO V2] Add localization
 + [DONE] Add self-updater
++ [WORKING] Make form markup standard
++ [WORKING] Test it a bit more :$
 
 FAQ
 ------
