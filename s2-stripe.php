@@ -3,7 +3,7 @@
  * Plugin Name: S2 Member - Stripe Gateway
  * Plugin URI: http://juanvillegas.ws
  * Description: Integrates Stripe into your S2 Member installation
- * Version: 1.2.4.3
+ * Version: 1.2.4.4
  * Author: Juan Villegas
  * Author URI: http://juanvillegas.ws
  * License: MIT
