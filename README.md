@@ -1,3 +1,9 @@
+IMPORTANT NOTICE
+================
+
+S2 member development team has released an official Stripe module available in their pro version of the memberships plugin. I strongly recommend using that version instead of this draft which wont be maintained any longer.
+
+
 s2-stripe
 =========
 
